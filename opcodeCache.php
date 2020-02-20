@@ -1,8 +1,8 @@
 <?php
 $timeout = 3600; // One Hour
-$file = '/tmp/cache/' . md5($_SERVER['REQUEST_URI']);
+$file = 'path to folder' . md5($_SERVER['REQUEST_URI']); //path to folder
 
-if (file_exists($file) && (filemtime($file) + $timeout) > time()) {
+if (file_exists($file) && (filemtime($file) + $timeout) > time()) { //if the file has been cached
     // Output the existing file to the user
     readfile($file);
     exit();
